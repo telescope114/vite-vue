@@ -79,6 +79,33 @@ npm install -D stylus
 
 
 
+## 运行依赖
+
+### UI组件库
+
+#### PC端：推荐 element-plus
+
+<a href="https://element-plus.gitee.io/#/zh-CN">element-plus</a> ：一套为开发者、设计师和产品经理准备的基于 Vue 3.0 的桌面端组件库
+
+```shell
+npm i -S element-plus
+```
+
+后续操作： <a href="https://element-plus.gitee.io/#/zh-CN/component/quickstart#yin-ru-element-plus">element-plus文档</a>
+
+#### 移动端：推荐 vant
+
+<a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN">vant</a>
+
+```shell
+# 整合项目使用的是Vue3，故命令不一样
+npm i -S vant@next
+```
+
+后续操作： <a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN/quickstart#fang-shi-si.-dao-ru-suo-you-zu-jian">全部引入</a> 、 <a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN/quickstart#fang-shi-san.-shou-dong-an-xu-yin-ru-zu-jian">按需引入</a> 、 <a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN/quickstart#fang-shi-er.-zai-vite-xiang-mu-zhong-an-xu-yin-ru-zu-jian">vite中 按需引入</a>
+
+
+
 ## vite配置文件
 
 vite配置文件在项目的`vite.config.js`内
@@ -136,6 +163,16 @@ export default defineConfig({
 
 
 
+## 其他配置文件
+
+### project.config.js
+
+文件位置： `/src`
+
+内容： 配置 **生产环境下和上线版本下** 的**后端地址**
+
+
+
 # 暂未解决
 
 ## 开发运行后
@@ -154,38 +191,9 @@ it is recommended to pin your vue dependencies to exact versions to avoid breaka
 
 
 
-## 运行依赖
+更新时间：2021年8月3日
 
-### UI组件库
-
-#### PC端：推荐 element-plus
-
-<a href="https://element-plus.gitee.io/#/zh-CN">element-plus</a> ：一套为开发者、设计师和产品经理准备的基于 Vue 3.0 的桌面端组件库
-
-```shell
-npm i -S element-plus
-```
-
-后续操作： <a href="https://element-plus.gitee.io/#/zh-CN/component/quickstart#yin-ru-element-plus">element-plus文档</a>
-
-#### 移动端：推荐 vant
-
-<a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN">vant</a>
-
-```shell
-# 整合项目使用的是Vue3，故命令不一样
-npm i -S vant@next
-```
-
-后续操作： <a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN/quickstart#fang-shi-si.-dao-ru-suo-you-zu-jian">全部引入</a> 、 <a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN/quickstart#fang-shi-san.-shou-dong-an-xu-yin-ru-zu-jian">按需引入</a> 、 <a href="https://vant-contrib.gitee.io/vant/v3/#/zh-CN/quickstart#fang-shi-er.-zai-vite-xiang-mu-zhong-an-xu-yin-ru-zu-jian">vite中 按需引入</a>
-
-
-
-更新时间：2021年8月2日
-
-更新版本：0.0.1
-
-
+更新版本：0.0.2
 
 # 更新日志
 
@@ -196,6 +204,8 @@ npm i -S vant@next
 `使用说明 => 基础 => 内部预设` 增加了 qs 
 
 `使用说明` 增加了vite配置文件
+
+`使用说明` 增加了其他配置文件
 
 ## 0.0.1
 
