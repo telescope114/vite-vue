@@ -16,6 +16,7 @@ request.interceptors.request(config => {
 
   // 注入token
 
+  return config
 }, error => {
   console.log(error)
 })
