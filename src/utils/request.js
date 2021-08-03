@@ -1,16 +1,18 @@
 import axios from 'axios'
+import { developmentURL, productionURL } from '../project.config'
 
 const request = axios.create({
-  timeout: 5000
+  timeout: 5000,
 })
 
 // 请求拦截
-request.interceptors.request(config => {
-  // 设置请求头的数据类型
-  if (config.method.toUpperCase() === 'POST') {
-    config.headers['Content-Type'] = 'application/json; charset=UTF-8'
-  } else if (config.method.toUpperCase() === 'GET') {
-    config.headers['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
+request.interceptors.request.use(config => {
+  if (process.env.NODE_ENV === 'production') {
+    // 生成环境下
+    config.baseURL = productionURL
+  } else {
+    // 默认开发环境下
+    config.baseURL = developmentURL
   }
   // 状态判断
 
@@ -22,7 +24,7 @@ request.interceptors.request(config => {
 })
 
 // 响应拦截
-request.interceptors.response(res => {
+request.interceptors.response.use(res => {
   // 处理响应
 
   return res

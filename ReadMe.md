@@ -26,7 +26,7 @@ yarn
 npm run dev
 ```
 
-默认端口： <a href="http://127.0.0.1:3000">3000</a>
+默认端口： <a href="http://127.0.0.1:1428">1428</a>
 
 该状态下的 <u>项目/组件</u> 能实时更新
 
@@ -50,7 +50,7 @@ npm run build
 
 ### 内部预设
 
-内部预设 <a href="https://next.router.vuejs.org/zh/index.html">vue-router@4.0.0</a> 、 <a href="https://next.vuex.vuejs.org/zh/index.html">vuex@4.0.0</a> 、 <a href="http://www.axios-js.com/">axios@0.21.1</a>
+内部预设 <a href="https://next.router.vuejs.org/zh/index.html">vue-router@4.0.0</a> 、 <a href="https://next.vuex.vuejs.org/zh/index.html">vuex@4.0.0</a> 、 <a href="http://www.axios-js.com/">axios@0.21.1</a> 、 <a href="https://www.npmjs.com/package/qs">qs</a>
 
 其中 `axios` 单独封装在 `.\utils\request.js` 内，建议开发者按业务需求再处理一下
 
@@ -76,6 +76,63 @@ npm install -D stylus
 <a href="https://cn.vitejs.dev/guide/features.html#css-pre-processors">参考文献</a>
 
 使用时只需要设置 `style` 的 `lang`属性即可
+
+
+
+## vite配置文件
+
+vite配置文件在项目的`vite.config.js`内
+
+### 常用
+
+#### 开发运行端口
+
+server => port
+
+```JS
+export default defineConfig({
+  // ......
+  server: {
+    port: '1428',
+  // ......
+  }
+})
+```
+
+#### 默认启动浏览器
+
+server => open
+
+```js
+export default defineConfig({
+  // ......
+  server: {
+    open: true,
+  // ......
+  }
+})
+```
+
+#### 跨域请求
+
+server => proxy
+
+```js
+export default defineConfig({
+  // ......
+  server: {
+    proxy: {
+      '^/api': {
+        target: 'http://127.0.0.1:3000', // 后端地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+   // ......
+  }
+})
+
+```
 
 
 
@@ -131,6 +188,14 @@ npm i -S vant@next
 
 
 # 更新日志
+
+## 0.0.2
+
+`使用说明 => 基础 => 开发运行`  修改默认端口号 原 3000  现  1428 
+
+`使用说明 => 基础 => 内部预设` 增加了 qs 
+
+`使用说明` 增加了vite配置文件
 
 ## 0.0.1
 
