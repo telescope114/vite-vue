@@ -79,6 +79,24 @@ npm install -D stylus
 
 
 
+# 暂未解决
+
+## 开发运行后
+
+```shell
+[@vue/compiler-sfc] <script setup> is still an experimental proposal.
+Follow its status at https://github.com/vuejs/rfcs/pull/227.
+
+[@vue/compiler-sfc] When using experimental features,
+it is recommended to pin your vue dependencies to exact versions to avoid breakage.
+
+[@vue/compiler-sfc] `defineProps` is a compiler macro and no longer needs to be imported
+```
+
+目前未知出现原因，需后续学习
+
+
+
 ## 运行依赖
 
 ### UI组件库
